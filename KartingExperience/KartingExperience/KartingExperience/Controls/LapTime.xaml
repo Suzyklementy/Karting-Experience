@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KartingExperience.Controls.LapTime">
+  <ViewCell.View>
+      
+      <StackLayout>
+
+            <Grid VerticalOptions="CenterAndExpand">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="80"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0">
+
+                    <Label Text="{Binding Time}" TextColor="#ffffff" FontSize="18" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="1">
+
+                    <Button Text="Delete" FontSize="10" BackgroundColor="#404040" CornerRadius="2" TextColor="#cc1130" Margin="10, 0" Padding="0, 0" HorizontalOptions="End" VerticalOptions="Center" WidthRequest="60" HeightRequest="20" CommandParameter="{Binding Id}" Clicked="DeleteTime"/>
+
+                </StackLayout>
+
+            </Grid>
+          
+        </StackLayout>
+      
+  </ViewCell.View>
+</ViewCell>

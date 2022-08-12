@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KartingExperience.MainPage"
+             xmlns:local="clr-namespace:KartingExperience.Controls"
+             BackgroundColor="#303030">
+
+    <StackLayout>
+        
+        <Frame BackgroundColor="#404040" Padding="20" CornerRadius="0">
+            <Label Text="Karting Experience" HorizontalTextAlignment="Center" TextColor="White" FontSize="32"/>
+        </Frame>
+
+        <ListView ItemsSource="{Binding LocalTrackList}" HeightRequest="500" RowHeight="80">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <local:Track/>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+        <Button Text="Add Track" BackgroundColor="#404040" CornerRadius="10" TextColor="#ffffff" Margin="25, 10" VerticalOptions="EndAndExpand" Clicked="Show_AddTrackPage"/>
+
+    </StackLayout>
+
+</ContentPage>

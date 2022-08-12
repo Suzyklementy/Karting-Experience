@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KartingExperience.Pages.AddTrack"
+             xmlns:local="clr-namespace:KartingExperience.Controls"             
+             BackgroundColor="#303030">
+    
+    <ContentPage.Content>
+        
+        <StackLayout>
+
+            <Frame BackgroundColor="#404040" Padding="20" CornerRadius="0">
+                <Label Text="Add New Track" HorizontalTextAlignment="Center" TextColor="White" FontSize="32"/>
+            </Frame>
+
+
+            <Label Text="Track name" Padding="8, 0, 0, 0" TextColor="White" />
+            <Entry Text="{Binding NewTrackName, Mode=TwoWay}" TextColor="White"/>
+            
+            <Label Text="lap times (s)" Padding="8, 0, 0, 0" TextColor="White" />
+            <Entry Text="{Binding NewLapTime, Mode=TwoWay}" TextColor="White" />
+            <Button Text="Add time" BackgroundColor="#404040" CornerRadius="10" TextColor="#ffffff" Margin="10, 0" Padding="25, 0" HorizontalOptions="Start" Command="{Binding AddLapTimeCommand}"/>
+
+            <Label Text="Yours lap times:" Padding="8, 0, 0, 0" TextColor="White" />
+            <ListView ItemsSource="{Binding NewLapsTimesList}" HeightRequest="400" RowHeight="25">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+
+                    <local:LapTime/>
+
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            </ListView>
+
+            <Label Text="{Binding Error}" TextColor="#ff2241" Padding="8, 0, 0, 0"/>
+
+            <Grid>
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <Button Text="Back" BackgroundColor="#404040" CornerRadius="10" TextColor="#ffffff" Margin="8, 10" HeightRequest="115" Clicked="LeavePage"/>
+                <Button Text="Add" BackgroundColor="#404040" CornerRadius="10" TextColor="#ffffff" Margin="8, 10" HeightRequest="115" Grid.Column="1" Command="{Binding AddTrackCommand}"/>
+
+            </Grid>
+
+        </StackLayout>
+        
+    </ContentPage.Content>
+    
+</ContentPage>

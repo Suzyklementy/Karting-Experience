@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ViewCell xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="KartingExperience.Controls.Track">
+  <ViewCell.View>
+      <StackLayout>
+
+
+            <Grid VerticalOptions="CenterAndExpand">
+
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="100"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                    <ColumnDefinition Width="*"/>
+                </Grid.ColumnDefinitions>
+
+                <StackLayout Grid.Column="0">
+
+                    <Label Text="{Binding TrackName}" TextColor="#ffffff" FontSize="18" Padding="5" VerticalTextAlignment="Center" HorizontalTextAlignment="Center"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="1">
+
+                    <Label Text="Best Time: " TextColor="#ffffff" FontSize="12" VerticalTextAlignment="Start"/>
+                    <Label Text="{Binding BestLapTime}" TextColor="#ffffff" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="2">
+
+                    <Label Text="Average Times: " TextColor="#ffffff" FontSize="12" VerticalTextAlignment="Start"/>
+                    <Label Text="{Binding AverageTime}" TextColor="#ffffff" FontSize="16" VerticalTextAlignment="Start" HorizontalTextAlignment="Center"/>
+
+                </StackLayout>
+
+                <StackLayout Grid.Column="3">
+
+                    <Button Text="Show Details" BackgroundColor="#404040" CornerRadius="10" TextColor="#ffffff" Margin="5, 2.5" VerticalOptions="EndAndExpand" FontSize="11" Clicked="ShowTrackDetails" CommandParameter="{Binding Id}"/>
+                    
+                    <!--<Label Text="Add Time: (s)" TextColor="#ffffff" FontSize="10" HorizontalTextAlignment="Center"/>
+                    <Entry/>-->
+
+                </StackLayout>
+
+            </Grid>
+
+
+          
+      </StackLayout>
+  </ViewCell.View>
+</ViewCell>
